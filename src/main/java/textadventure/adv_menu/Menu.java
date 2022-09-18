@@ -89,7 +89,7 @@ public class Menu {
                 input = scan.nextLine();
                 if (input.equals("?")) {
                     playActionSound();
-                    Utility.showHelp("English");
+                    Utility.showHelp("English", "Options");
                 }
                 if (input.equals("de")) {
                     playActionSound();
@@ -106,7 +106,7 @@ public class Menu {
                 input = scan.nextLine();
                 if (input.equals("?")) {
                     playActionSound();
-                    Utility.showHelp("Deutsch");
+                    Utility.showHelp("Deutsch", "Options");
                 }
                 if (input.equals("en")) {
                     playActionSound();

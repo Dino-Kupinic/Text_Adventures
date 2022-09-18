@@ -2,6 +2,7 @@ package textadventure.adv_util;
 
 import textadventure.Music;
 import textadventure.adv_menu.Menu;
+import textadventure.adv_story.CharacterSelection;
 import textadventure.adv_text.ConsoleText;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -46,10 +47,9 @@ public class Utility {
 
 
     // TODO: Implement full help catalog for en de
-    public static void showHelp(String language) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
+    public static void showHelp(String language, String returnMenu) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
         ConsoleText consoleText = new ConsoleText();
         Scanner scan = new Scanner(System.in);
-        Menu menu = new Menu();
         String input;
 
         consoleText.setSpeaker("normal");
@@ -103,6 +103,15 @@ public class Utility {
             }
         }
         clearConsole();
-        menu.displayOptions();
+        returnMenu(returnMenu);
+    }
+
+    public static void returnMenu(String returnMenu) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
+        Menu menu = new Menu();
+        CharacterSelection characterSelection = new CharacterSelection();
+        switch (returnMenu) {
+            case "Options" -> menu.displayOptions();
+            case "CharacterSelect" -> characterSelection.showCharacterSelection();
+        }
     }
 }

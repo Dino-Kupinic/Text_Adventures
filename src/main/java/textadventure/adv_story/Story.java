@@ -42,6 +42,6 @@ public class Story {
         Utility.sleepThread(3000);
         Utility.clearConsole();
         characterSelection.displayCharacterSelection();
-        characterSelection.showCharacterSelection();
+        characterSelection.showCharacterSelectionTitle();
     }
 }
